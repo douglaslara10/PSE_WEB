@@ -1,0 +1,303 @@
+/* LoginForm.module.css - Design Premium */
+
+:root {
+    --pse-black: #222222;
+    --pse-gold: #b5b035;
+    --pse-light-gold: #c9c454;
+    --pse-dark-gold: #9a9530;
+    --pse-bg-dark: #1a1a1a;
+    --pse-bg-light: #f9f9f7;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at 10% 20%, var(--pse-bg-dark) 0%, #2d2d2d 90%);
+    padding: 20px;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    perspective: 1000px;
+  }
+  
+  .formCard {
+    background: var(--pse-bg-light);
+    border-radius: 16px;
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 430px;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(2deg) rotateY(0deg);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: cardFloat 6s ease-in-out infinite;
+  }
+  
+  @keyframes cardFloat {
+    0%, 100% { transform: translateY(0) rotateX(2deg); }
+    50% { transform: translateY(-10px) rotateX(2deg); }
+  }
+  
+  .formCard:hover {
+    box-shadow: 
+      0 30px 60px -15px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.15);
+  }
+  
+  .gradientBorder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--pse-gold), var(--pse-light-gold), var(--pse-dark-gold), var(--pse-gold));
+    background-size: 300% 100%;
+    animation: gradientMove 6s ease infinite;
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 20px;
+    position: relative;
+  }
+  
+  .logoWrapper {
+    position: relative;
+    width: 150px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logoGlow {
+    position: absolute;
+    width: 160px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(181, 176, 53, 0.15) 0%, rgba(181, 176, 53, 0) 70%);
+    border-radius: 50%;
+    animation: pulse 3s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  
+  .logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .form {
+    padding: 0 35px 35px;
+  }
+  
+  .title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--pse-black);
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    background: var(--pse-gold);
+    border-radius: 3px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 24px;
+    position: relative;
+  }
+  
+  .inputGroup label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--pse-black);
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  
+  .inputWrapper {
+    position: relative;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(249, 249, 247, 0.8);
+    backdrop-filter: blur(10px);
+  }
+  
+  .input:focus {
+    border-color: var(--pse-gold);
+    outline: none;
+    background-color: #fff;
+    box-shadow: 
+      0 0 0 4px rgba(181, 176, 53, 0.1),
+      0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .input::placeholder {
+    color: #a0aec0;
+    transition: opacity 0.2s;
+  }
+  
+  .input:focus::placeholder {
+    opacity: 0.7;
+  }
+  
+  .inputIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    color: #a0a0a0;
+    transition: color 0.2s;
+  }
+  
+  .inputGroup:focus-within .inputIcon {
+    color: var(--pse-gold);
+  }
+  
+  .button {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, var(--pse-dark-gold), var(--pse-gold), var(--pse-light-gold));
+    background-size: 200% 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(181, 176, 53, 0.2);
+    z-index: 1;
+  }
+  
+  .button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+  
+  .button:hover {
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(181, 176, 53, 0.3);
+  }
+  
+  .button:hover:before {
+    left: 100%;
+  }
+  
+  .button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(181, 176, 53, 0.2);
+  }
+  
+  .errorContainer {
+    background-color: rgba(254, 242, 242, 0.9);
+    border-left: 4px solid #f56565;
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .errorIcon {
+    margin-right: 12px;
+    color: #f56565;
+    flex-shrink: 0;
+  }
+  
+  .errorMessage {
+    color: #e53e3e;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 13px;
+  }
+  
+  .footerText {
+    color: #666;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 480px) {
+    .formCard {
+      max-width: 100%;
+      animation: none;
+      transform: none;
+    }
+    
+    .form {
+      padding: 0 25px 25px;
+    }
+    
+    .title {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+    
+    .input {
+      padding: 12px 14px;
+    }
+  }
